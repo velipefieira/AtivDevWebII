@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Frete</title>
+    <style>
+        .confirma {
+            background-color: forestgreen;
+            color: white;
+        }
+        h2, h3{
+            text-align: center;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            margin: 1%;
+            padding: 1%;
+        }
+    </style>
+    <script src="./4.js"> </script>
+</head>
+<body>
+    <h2> Por favor, preencha todos os requisitos antes de calcular.</h2>
+    <h3> Selecione a região da entrega:</h3>
+    <div>
+        <button onclick="local('Sul')">
+            Região Sul
+        </button>
+        <button onclick="local('Centro_oeste')">
+            Região Centro-oeste
+        </button>
+        <button onclick="local('Sudeste')">
+            Região Sudeste
+        </button>
+    </div>
+    <h3> Selecione suas preferencias de rastreio, quantidade de peças e a distância:</h3>
+    <div>
+        <button onclick="rastrear()">
+            Rastreio
+        </button>
+        <button onclick="qnt_pecas()">
+            Quantidade de peças 
+        </button>
+        <button onclick="dist()">
+            Distância
+        </button>
+    </div>
+    <div>
+        <button onclick="confirma()" class="confirma">
+        <p>Confirmar</p> </button>
+    </div>
+</body>
+</html>
