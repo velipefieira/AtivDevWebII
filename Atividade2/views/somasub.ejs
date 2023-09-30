@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %> </title>
+    <script>
+        function calcular(){
+    calculo = prompt("Insira a conta (Ex: 1 + 1 ou 2 - 2)")
+    calculo = calculo.split(" ")
+    n1 = parseInt(calculo[0])
+    n2 = parseInt(calculo[2])
+    var resultado = 0
+
+    if (calculo[1] == "+"){
+        resultado += n1 + n2
+    } else if (calculo[1] == "-"){
+        resultado += n1 - n2
+    }
+
+    alert(`Seu resultado foi: ${resultado}`)
+}
+    </script>
+</head>
+<body>
+    <button onclick="calcular()"> Calcular</button>
+</body>
+</html>
