@@ -15,7 +15,11 @@
     if (calculo[1] == "x"){
         resultado += n1 * n2
     } else if (calculo[1] == "/"){
-        resultado += n1 / n2
+        if (n2 == 0 | n1 == 0){
+            resultado = 0
+        } else {
+            resultado += n1 / n2
+        }
     }
 
     alert(`Seu resultado foi: ${resultado}`)

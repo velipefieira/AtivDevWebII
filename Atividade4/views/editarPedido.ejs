@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editando pedido</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Editar Pedido</h1>
+    <form action="/pedido/<%= pedido.ped_id %>" method="post">
+      <label for="ped_desc">Descrição:</label>
+      <input type="text" id="ped_desc" name="ped_desc" required value="<%= pedido.ped_desc %>">
+      <br>
+      <label for="ped_valor">Valor:</label>
+      <small>Somente números e pontos são permitidos</small>
+      <input type="text" id="ped_valor" name="ped_valor" pattern="[0-9]+(\.[0-9]+)?" required value="<%= pedido.ped_valor %>">
+      <br>
+      <label for="cli_id">Cliente:</label>
+      <select id="cli_id" name="cli_id" required>
+        <option value ='' disabled selected> Selecione um cliente </option>
+        <% clientes.forEach(cliente => { %>
+          <option value="<%= cliente.cli_id %>"><%= cliente.cli_nome %></option>
+        <% }); %>
+      </select>
+      <br>
+      <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- views/cadastro-cliente.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Pedidos e Clientes</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Cadastro de Cliente</h1>
+  <form action="/cadastro/cliente" method="post">
+    <label for="cli_nome">Nome:</label>
+    <input type="text" id="cli_nome" name="cli_nome" required>
+    <br>
+    <label for="cli_email">E-mail:</label>
+    <input type="email" id="cli_email" name="cli_email" required>
+    <br>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <h1>Cadastro de Pedido</h1>
+  <form action="/cadastro/pedido" method="post">
+    <label for="ped_desc">Descrição:</label>
+    <input type="text" id="ped_desc" name="ped_desc" required>
+    <br>
+    <label for="ped_valor">Valor:</label>
+    <small>Somente números e pontos são permitidos</small>
+    <input type="text" id="ped_valor" name="ped_valor" pattern="[0-9]+(\.[0-9]+)?" required>
+    <br>
+    <label for="cli_id">Cliente:</label>
+    <select id="cli_id" name="cli_id" required>
+      <option value ='' disabled selected> Selecione um cliente </option>
+      <% clientes.forEach(cliente => { %>
+        <option value="<%= cliente.cli_id %>"><%= cliente.cli_nome %></option>
+      <% }); %>
+    </select>
+    <br>
+    <button type="submit">Cadastrar</button>
+  </form>
+</body>
+</html>

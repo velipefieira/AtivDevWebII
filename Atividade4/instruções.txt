@@ -1,0 +1,9 @@
+- Executar o script.sql 
+
+- A senha está definida como "12345", caso necessário, troque-a no db.js
+
+- npm install
+
+- node ./index.js
+
+- http://localhost:3000/

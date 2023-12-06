@@ -34,7 +34,7 @@ function dist() {
     distancia = prompt("Insira a distância da entrega em Km: (exemplo: 100, 150, 200)")
     parseInt(distancia)
     taxas.dist = distancia * 5.65
-    taxas.dist = taxas.dist.toFixed(2)
+    taxas.dist = taxas.dist
     valor += taxas.dist
 }
 
@@ -59,9 +59,9 @@ function confirma(){
         alert("Não foi possível calcular seu frete, tente preencher todos os requisitos.")
     } else {
         document.write(`<h2> No total, estes foram os valores: </h2>`)
-        document.write(`<h3> Taxa de rastreio: ${taxas.rastreio} </h3>`)
-        document.write(`<h3> Valor pelo frete das peças: ${taxas.pecas}</h3>`)
-        document.write(`<h3> Valor do frete por quilômetro: ${taxas.dist}</h3>`)
-        document.write(`<h3> Valor total do frete: ${valor}</h3>`)
+        document.write(`<h3> Taxa de rastreio: ${taxas.rastreio.toFixed(2)} </h3>`)
+        document.write(`<h3> Valor pelo frete das peças: ${taxas.pecas.toFixed(2)}</h3>`)
+        document.write(`<h3> Valor do frete por quilômetro: ${taxas.dist.toFixed(2)}</h3>`)
+        document.write(`<h3> Valor total do frete: ${valor.toFixed(2)}</h3>`)
     }
 }

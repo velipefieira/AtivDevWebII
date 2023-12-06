@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualização de Pedidos</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <p class="nav-link"> Market Express </p>
+    <a class="nav-link" href="/cadastro"> Cadastrar Pedidos ou Clientes </a>
+  </nav>
+  <div class="container mt-5">
+    <h2>Lista de Pedidos</h2>
+    <ul class="list-group">
+      <% pedidos.forEach(pedido => { %>
+        <li class="list-group-item">
+          <strong>ID: </strong> <%= pedido.ped_id %><br>
+          <strong>Descrição:</strong> <%= pedido.ped_desc %><br>
+          <strong>Valor:</strong> <%= pedido.ped_valor %><br>
+          <strong>Cliente:</strong> <%= pedido.cliente ? pedido.cliente.cli_nome : 'Cliente não disponível' %><br>
+          <div>
+            <a href="/pedido/<%= pedido.ped_id %>"> Editar Pedido </a> <br>
+            <a href="/pedido/excluir/<%= pedido.ped_id %>"> Excluir Pedido</a> <br>
+          </div>
+        </li>
+      </ul>
+      <% }); %>
+    </div>
+    <div class="container mt-4">
+      <h2>Lista de Clientes</h2>
+      <ul class="list-group">
+        <% clientes.forEach(cliente => { %>
+          <li class="list-group-item">
+            <strong>ID:</strong> <%= cliente.cli_id %><br>
+            <strong>Nome:</strong> <%=  cliente.cli_nome %><br>
+            <strong>Email:</strong> <%= cliente.cli_email  %><br>
+            <div>
+              <a href="/cliente/<%= cliente.cli_id %>"> Editar Cliente </a> <br>
+              <a href="/cliente/excluir/<%= cliente.cli_id %>"> Excluir Cliente </a> <br>
+            </div>
+          </li>
+        </ul>
+        <% }); %>
+      </div>
+  </body>
+</html>

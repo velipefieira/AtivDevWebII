@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        td{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        th{
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+    <h2> Bem vindo ao sistema!</h2>
+    <table border="2px">
+        <tr>
+            <th> Nome </th>
+            <th> Idade </th>
+            <th> Cargo </th>
+            <th> Salario </th>
+            <th> Editar </th>
+            <th> Excluir </th>
+        </tr>
+        <% funcionarios.forEach(function(fun) { %>
+            <tr>
+                <td><%= fun.fun_nome %></td>
+                <td><%= fun.fun_idade %></td>
+                <td><%= fun.car_nome %></td>
+                <td><%= fun.car_salario %></td>
+                <td><a href="/editar/<%= fun.fun_id %>"> <img src="https://cdn-icons-png.flaticon.com/512/4277/4277132.png" alt="editar" width="30"></a></td>
+                <td><a href="/deletar/<%= fun.fun_id %>"> <img src="https://cdn-icons-png.flaticon.com/512/75/75519.png" alt="'deletar" width="30"> </a></td>
+            </tr>
+        <% }); %>
+    </table>
+    <p></p>
+    <a href="/cadastro"> Cadastrar funcionario </a>
+</body>
+</html>
